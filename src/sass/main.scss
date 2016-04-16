@@ -1,5 +1,75 @@
 /* CSS Entry Point */
 
 // Turn on freq used libraries
-@import 'normalize-css/normalize';
+//@import 'normalize-css/normalize';
 // @import 'font-awesome/scss/font-awesome';
+
+body {
+	background-color: #3576CD;
+}
+
+.login-paper {
+	width: 600px;
+	height: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40px;
+
+	img {
+
+		margin-left: 450px;
+
+	}
+	.login-left {
+		float: left;
+		border-right: 1px solid #9ca7c6;
+		width: 49%;
+		.login-input {
+			height: 30px;
+			width: 200px;
+			margin-bottom: 20px;
+			margin-left: 20px;
+			font-size: 12px;
+		}
+		button {
+			height: 25px;
+			width: 80px;
+			margin-left: 20px;
+			font-size: 16px;
+		}
+
+	}
+	.login-right {
+		float: right;
+		width: 49%;
+		.register-link {
+			font-size: 16px;
+			float: right;
+			margin-top: 50px;
+			margin-right: 120px;
+			color: #3576CD;
+		}
+	}
+	p {
+		clear: both;
+		padding: 40px;
+		font-size: 24px;
+		text-align: center;
+		line-height: 40px;
+		.logo-mild {
+
+		}
+		.logo-wild {
+
+		}
+
+	}
+}
+
+
+
+
+
+
+
+

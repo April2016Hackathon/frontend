@@ -18,6 +18,7 @@ render ((
       <IndexRoute component={Submission}/>
 			{/*<Route path='/:username/mood' component={CurrentUserView}/>*/}
     </Route>
+
 	</Router>
 
 ), document.querySelector('.app'))

@@ -17,7 +17,9 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div>
+      <div className="register-wrapper">
+        <Paper className="register-paper">
+
         <h1>Sign Up</h1>
         <SSF onData={::this.dataHandler}>
           <input type='text'     name='username' placeholder='Username'/>
@@ -25,6 +27,9 @@ export default class Register extends Component {
           <input type='email'    name='email'    placeholder='Email'/>
           <button>Register</button>
         </SSF>
-      </div>);
+        </Paper>
+      </div>
+
+      );
   }
 }

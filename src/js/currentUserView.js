@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ResponseFeed from './response_feed';
 
 
 export default class CurrentUserView extends Component {
@@ -17,6 +18,7 @@ export default class CurrentUserView extends Component {
 				<div className="myprofile">
 					<h1>{user.username}</h1>
 					<div>{user.status}</div>
+					<ResponseFeed/>
 
 				</div>
 

@@ -3,6 +3,7 @@ import SSF from 'react-simple-serial-form';
 import { Link, hashHistory } from 'react-router';
 import { ajax, ajaxSetup } from 'jquery';
 import cookie from 'js-cookie';
+import Paper from 'material-ui/lib/paper';
 
 /* TODO: NAMES NEED TO BE CORRECTED, GET INFO FROM BACK END */
 
@@ -36,12 +37,31 @@ export default class LogIn extends Component {
   render() {
     return (
       <div className='login-wrapper'>
+      <Paper className="login-paper">
+        <img
+          src='../images/mild_wild.png'
+          alt='Mild or Wild Logo'
+          width="150"
+        />
+        <br/>
+        <div className='login-left'>
         <SSF onData={::this.logIn}>
-          <input type='text' name='username' placeholder='Username'/>
-          <input type='password' name='password' placeholder='Password'/>
+          <input type='text' name='username' placeholder='Username' className='login-input'/>
+          <br/>
+          <input type='password' name='password' placeholder='Password' className='login-input'/>
+          <br/>
           <button>Submit</button>
         </SSF>
-        <Link to='/register'>Register</Link>
+        </div>
+        <div className='login-right'>
+        <Link to='/register' className='register-link'>Register</Link>
+        </div>
+        <div className="instructions">
+          <p> Are you <span className='logo-mild'>mild</span> or <span className='logo-wild'>wild</span>? 
+            <br/>  
+          Choose your mood and elevate others' moods.</p>
+        </div>
+      </Paper>
       </div>
     );
   }

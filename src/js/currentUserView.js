@@ -14,9 +14,9 @@ componentWillMount(){
 	// ajax(`https://blooming-springs-29783.herokuapp.com/posts/${this.props.params.post_id}`)
 	// .then(post => {
 	// 	this.setState({post})
-
-	ajax('https://blooming-springs-29783.herokuapp.com/')
-	}.then (resp => {
+	let { user_id } = this.props.params;
+	ajax(`https://blooming-springs-29783.herokuapp.com/${user_id}/`)
+	.then (resp => {
 		this.setState({post: resp});
 	}
 	)

@@ -9,7 +9,7 @@ export default class ResponseFeed extends Component {
       responses: []
     }
   }
-  
+
   componentWillMount(){
     let { post_id } = this.props.params;
       this.intervalID = setInterval(function () {
@@ -18,9 +18,9 @@ export default class ResponseFeed extends Component {
         this.setState({ responses })
       })
     }, 3000)
-  
+
   }
-  
+
   makeResponse(response){
     <li>{response.user} {response.words}</li>
   }
@@ -34,7 +34,7 @@ export default class ResponseFeed extends Component {
     return (
       <div>
         <ul>
-          {/*{responses.map(::this.makeResponse)}*/}
+          {responses.map(::this.makeResponse)}
         </ul>
       </div>
     );

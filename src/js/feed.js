@@ -28,7 +28,7 @@ export default class PostFeed extends Component {
 
   makePost(post){
     return (
-      <Link to="/"><div className='post'>{post.user} {post.title}</div></Link>
+      <Link to="/fixme"><div className='post'>{post.user} {post.title}</div></Link>
 
     )
   }

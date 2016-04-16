@@ -10,16 +10,14 @@ import Submission from './submission';
 import CurrentUserView from './currentUserView';
 import ResponseView from './response_view';
 import cookie from 'js-cookie';
-import ResponseView from './response_view';
-
 render ((
 	<Router history={hashHistory}>
     	<Route path='/login' component={LogIn}/>
    		<Route path='/register' component={Register}/>
     	<Route path='/:username' component={Dashboard}>
-			<IndexRoute component={Submission}/>
-			<Route path='/:username/:post_id/mood' component={CurrentUserView}/>
-			<Route path='/:username/respond' component={ResponseView}/>
+				<IndexRoute component={Submission}/>
+				<Route path='/:username/:post_id/mood' component={CurrentUserView}/>
+				<Route path='/:username/respond' component={ResponseView}/>
     	</Route>
 
 	</Router>

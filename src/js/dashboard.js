@@ -1,28 +1,37 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router';
+import React, {PropTypes, Component} from 'react';
+import { Link, hashHistory } from 'react-router';
+import CurrentUserView from './currentUserView';
+import Submission from './submission';
 import cookie from 'js-cookie';
 
 export default class Dashboard extends Component {
 
+	logOut(){
+		cookie.remove('currentUser');
+		hashHistory.push('/login');
+	}
+
 	render() {
+		let currentUser = cookie.getJSON('currentUser')
+		console.log(cookie.getJSON('currentUser'))
 		return (
 
 			<div className="dashboard">
 			<header>
 				HEADER
-				<span></span>
+				<span>{currentUser.username}</span>
 				<img
 					src='../images/mild_wild.png'
 					alt='Mild or Wild Logo'
 				/>
 			</header>
-
-			<aside>FEED</aside>
-
+			<aside></aside>
 			<div className="main">
-			{this.props.children}
+				<Submission/>
+				<CurrentUserView />
+				<ResponseView/>
 			</div>
-			<button onClick={cookie.remove('currentUser')}>Log Out</button>
+			<button onClick={this.logOut}>Log Out</button>
 			<footer>FOOTER</footer>
 
 

@@ -6,20 +6,18 @@ import { hashHistory } from 'react-router';
 export default class Submission extends Component {
     // constructor () {
     //     super ();
-    //     this.state = { status: null} 
+    //     this.state = { status: null}
     // }
 
-	dataHandler(moodstatus){
-        console.log(moodstatus);
-
-      // ajax({
-      //   url: 'http://',
-      //   type: 'POST',
-      //   cached: false,
-      //   dataType: 'json',
-      //   processData: false,
-      //   contentType: false
-      // }).then(hashHistory.push('/'))
+	dataHandler(subData){
+        console.log(subData);
+				let currentUser = cookie.getJSON('currentUser')
+				ajax({
+					url: 'https://blooming-springs-29783.herokuapp.com/posts/create',
+					type: 'POST',
+					data: subData,
+					dataType: 'json'
+				}).then(hashHistory.push(`/${currentUser.username}/mood`))
     }
 
     render () {
@@ -27,18 +25,20 @@ export default class Submission extends Component {
 
     	<div className="submission">
     		<h1>My Moods</h1>
-
-            <SSF onData={::this.dataHandler}> 
-              <label>MILD 			
-                <input type="radio" name="status" value={true} />
-              </label>    
+            <SSF onData={::this.dataHandler}>
+              <label>MILD
+                <input type="radio" name="mood" value={true} />
+              </label>
               <label>WILD
-                <input type="radio" name="status" value={false} /> 
-              </label> 
+                <input type="radio" name="mood" value={false} />
+              </label>
               <label>
-                <input type="text" name="description" placeholder="description" />
-              </label>          
-                <button>Submit</button>
+                <input type="text" 	name="text"  placeholder="Tell us why..." />
+              </label>
+							<label>
+								<input type="text" 	name="title" placeholder="Title your post..." />
+							</label>
+              <button>Submit</button>
     		</SSF>
     	</div>
    ) }

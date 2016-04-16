@@ -7,19 +7,17 @@ import LogIn from './login';
 import Register from './register';
 import Dashboard from './dashboard';
 import Submission from './submission';
-import CurrentUserView from './currentUserView';
+// import CurrentUserView from './currentUserView';
 import cookie from 'js-cookie';
-
-let currentUser = null
 
 render ((
 	<Router history={hashHistory}>
     <Route path='/login' component={LogIn}/>
     <Route path='/register' component={Register}/>
-    <Route path='/' component={Dashboard} user={cookie.get('currentUser')}>
-      {/*<IndexRoute component={StuffInDasboard}/>*/}
+    <Route path='/:username' component={Dashboard}>
+      <IndexRoute component={Submission}/>
+			{/*<Route path='/:username/mood' component={CurrentUserView}/>*/}
     </Route>
 	</Router>
-
 
 ), document.querySelector('.app'))

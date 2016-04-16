@@ -21,16 +21,14 @@ export default class LogIn extends Component {
         cached: false,
         dataType: 'json'
       }).then(resp => {
+        console.log('resp', resp)
         ajaxSetup({
           headers: {
-            'X-Auth-Token': resp.auth_token
+            'X-Auth-Token': resp.user.auth_token
           }
         })
-        cookie.set('currentUser', {
-          user: resp.user_name,
-          auth_token: resp.auth_token
-        })
-        hashHistory.push('/')
+        cookie.set('currentUser', resp.user, { expires: 7 });
+        hashHistory.push(`/${resp.user.username}`)
       })
     }
   }

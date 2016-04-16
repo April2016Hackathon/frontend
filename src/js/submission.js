@@ -5,7 +5,7 @@ import { hashHistory } from 'react-router';
 
 export default class Submission extends Component {
 
-	dataHandler(newUser){
+	dataHandler(moodstatus){
       ajax({
         url: 'http://',
         type: 'POST',
@@ -13,7 +13,7 @@ export default class Submission extends Component {
         dataType: 'json',
         processData: false,
         contentType: false
-      }).then(hashHistory.push('/login'))
+      }).then(hashHistory.push('/'))
     }
 
     render () {

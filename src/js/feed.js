@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
+import { Link } from 'react-router';
 
 export default class PostFeed extends Component {
   constructor(...args) {
@@ -10,13 +11,15 @@ export default class PostFeed extends Component {
   }
 
   componentWillMount(){
-    let this.pollingInt = setInterval(
-      ajax('https://blooming-springs-29783.herokuapp.com/posts/index').then(newPosts => {
-        this.setState({
-          posts: newPosts
+    this.pollingInt = setInterval( () => {
+      ajax('https://blooming-springs-29783.herokuapp.com/posts/index')
+        .then(newPosts => {
+          console.log("B recieving req")
+          this.setState({
+            posts: newPosts
+          })
         })
-      })
-    )
+    }, 3000)
   }
 
   componentWillUnmount(){
@@ -24,7 +27,10 @@ export default class PostFeed extends Component {
   }
 
   makePost(post){
-    <Link><div className='post'>{post.user} {post.title}</div></Link>
+    return (
+      <Link to="/"><div className='post'>{post.user} {post.title}</div></Link>
+
+    )
   }
 
   render() {

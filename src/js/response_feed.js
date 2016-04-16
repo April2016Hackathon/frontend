@@ -9,21 +9,21 @@ export default class ResponseFeed extends Component {
       responses: []
     }
   }
-  //
-  // componentWillMount(){
-  //
-  //     this.intervalID = setInterval(function () {
-  //     ajax('http://blooming-springs-29783.herokuapp.com/response')
-  //     .then(responses => {
-  //       this.setState({ responses })
-  //     })
-  //   }, 3000)
-  //
-  // }
-  //
-  // makeResponse(response){
-  //   <li>{response.user} {response.words}</li>
-  // }
+  
+  componentWillMount(){
+    let { post_id } = this.props.params;
+      this.intervalID = setInterval(function () {
+      ajax(`http://blooming-springs-29783.herokuapp.com/posts/${post_id}/response`)
+      .then(responses => {
+        this.setState({ responses })
+      })
+    }, 3000)
+  
+  }
+  
+  makeResponse(response){
+    <li>{response.user} {response.words}</li>
+  }
 
   componentWillUnmount(){
     clearInterval(this.intervalID)

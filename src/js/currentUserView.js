@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ResponseFeed from './response_feed';
-import { ajax } from 'jquery'
+import { ajax } from 'jquery';
 
 export default class CurrentUserView extends Component {
 	constructor(...args){
@@ -11,10 +11,15 @@ export default class CurrentUserView extends Component {
 	}
 
 componentWillMount(){
-	ajax(`https://blooming-springs-29783.herokuapp.com/posts/${this.props.params.post_id}`)
-	.then(post => {
-		this.setState({post})
-	})
+	// ajax(`https://blooming-springs-29783.herokuapp.com/posts/${this.props.params.post_id}`)
+	// .then(post => {
+	// 	this.setState({post})
+
+	ajax('https://blooming-springs-29783.herokuapp.com/')
+	}.then (resp => {
+		this.setState({post: resp});
+	}
+	)
 }
 	render() {
 		let {post} = this.state

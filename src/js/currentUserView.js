@@ -16,7 +16,7 @@ componentWillMount(){
 	// 	this.setState({post})
 
 	ajax('https://blooming-springs-29783.herokuapp.com/')
-	}.then (resp => {
+	.then (resp => {
 		this.setState({post: resp});
 	}
 	)

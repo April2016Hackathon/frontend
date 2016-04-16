@@ -9,25 +9,28 @@ import cookie from 'js-cookie';
 export default class LogIn extends Component {
 
   logIn(data){
-    ajax({
-      url: 'http://',
-      type: 'POST',
-      data: data,
-      cached: false,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    }).then(resp => {
-      ajaxSetup({
-        headers: {
-          'X-auth_token': resp.auth_token
-        }
+    if (data.user_name !== '' && data.user_name.length > 2 && data.user_name.length < 16 )
+    {
+      ajax({
+        url: 'http://',
+        type: 'POST',
+        data: data,
+        cached: false,
+        dataType: 'json',
+        processData: false,
+        contentType: false
+      }).then(resp => {
+        ajaxSetup({
+          headers: {
+            'X-auth_token': resp.auth_token
+          }
+        })
+        cookie.set(currentUser, {
+          user: resp.user_name,
+          auth_token: resp.auth_token
+        })
       })
-      cookie.set(currentUser, {
-        user: resp.user_name,
-        auth_token: resp.auth_token
-      })
-    })
+    }
   }
 
   render() {

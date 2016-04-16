@@ -20,8 +20,8 @@ export default class Submission extends Component {
 					headers: {
 							'X-Auth-Token': currentUser.auth_token
 					}
-				}).then((post =>{
-					hashHistory.push(`/${post.username}/${post.id}/mood`)
+				}).then((resp =>{
+					hashHistory.push(`/${resp.post.username}/${resp.post.id}/mood`)
 				}))
     }
 
@@ -43,6 +43,9 @@ export default class Submission extends Component {
 							<label>
 								<input type="text" 	name="title" placeholder="Title your post..." />
 							</label>
+							{/*<Link to={`/${currentUser.username}/mood`}>My Mood</Link>*/}
+
+
               <button>Submit</button>
     		</SSF>
     	</div>

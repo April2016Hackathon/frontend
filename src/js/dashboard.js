@@ -7,6 +7,12 @@ import PostFeed from './feed';
 import cookie from 'js-cookie';
 
 export default class Dashboard extends Component {
+	constructor(...args){
+		super(...args);
+		// this.state = {
+		// 	view: <Submission/>
+		// }
+	}
 
 	logOut(){
 		cookie.remove('currentUser');
@@ -27,17 +33,14 @@ export default class Dashboard extends Component {
 					alt='Mild or Wild Logo'
 				/>
 			</header>
-<<<<<<< HEAD
-			<aside><</aside>
-=======
+
 			<aside>
-				<Link to={`/${currentUser.username}`}>Submission</Link>
-				<Link to={`/${currentUser.username}/mood`}>My Mood</Link>
-				<Link to={`/${currentUser.username}/respond`}>Elevate Moods</Link>
+				{/*<Link to={`/${currentUser.username}`}>Submission</Link>*/}
+				{/*<Link to={`/${currentUser.username}/respond`}>Elevate Moods</Link>*/}
+				<PostFeed/>
 			</aside>
->>>>>>> fe5b6b45f1ed7cfaf3435f1d20674647d6151dc3
 			<div className="main">
-				
+				{this.props.children}
 			</div>
 			<button onClick={this.logOut}>Log Out</button>
 			<footer>FOOTER</footer>

@@ -26,7 +26,12 @@ export default class Dashboard extends Component {
 					alt='Mild or Wild Logo'
 				/>
 			</header>
-			<aside></aside>
+			<aside>
+				<Link to={`${username}/new`}/>
+
+
+
+			</aside>
 			<div className="main">
 			</div>
 			<button onClick={this.logOut}>Log Out</button>

@@ -11,7 +11,7 @@ render ((
 	<Router history={hashHistory}>
     <Route path='/login' component={LogIn}/>
     <Route path='/register' component={Register}/>
-    <Route path='/' component={LogIn}>
+    <Route path='/' component={Dashboard}>
       {/*<IndexRoute component={StuffInDasboard}/>*/}
     </Route>
 	</Router>

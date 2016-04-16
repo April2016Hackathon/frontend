@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SSF from 'react-simple-serial-form';
-import { hashHistory } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import { ajax, ajaxSetup } from 'jquery';
 import cookie from 'js-cookie';
 
@@ -9,7 +9,10 @@ import cookie from 'js-cookie';
 export default class LogIn extends Component {
 
   logIn(data){
-    if (data.user_name !== '' && data.user_name.length > 2 && data.user_name.length < 16 )
+    if (
+       data.user_name !== '' 
+    && data.user_name.length > 2
+    && data.user_name.length < 16 )
     {
       ajax({
         url: 'http://',
@@ -29,6 +32,7 @@ export default class LogIn extends Component {
           user: resp.user_name,
           auth_token: resp.auth_token
         })
+        hashHistory.push('/')
       })
     }
   }
@@ -41,6 +45,7 @@ export default class LogIn extends Component {
           <input type='password' name='password' placeholder='Password'/>
           <button>Submit</button>
         </SSF>
+        <Link to='/register'>Register</Link>
       </div>
     );
   }

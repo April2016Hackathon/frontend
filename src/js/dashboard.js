@@ -7,7 +7,10 @@ export default class Dashboard extends Component {
 		return (
 
 			<div className="dashboard">
-			<header>HEADER</header>
+			<header>
+				HEADER
+				<img src='../images/mild_wild.png' alt='Mild or Wild Logo'/>
+			</header>
 
 			<aside>FEED</aside>
 

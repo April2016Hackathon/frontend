@@ -10,6 +10,8 @@ import Submission from './submission';
 import CurrentUserView from './currentUserView';
 import ResponseView from './response_view';
 import cookie from 'js-cookie';
+
+
 render ((
 	<Router history={hashHistory}>
     	<Route path='/login' component={LogIn}/>
@@ -17,7 +19,7 @@ render ((
     	<Route path='/:username' component={Dashboard}>
 				<IndexRoute component={Submission}/>
 				<Route path='/:user_id/mood' component={CurrentUserView}/>
-				<Route path='/:username/respond' component={ResponseView}/>
+				<Route path='/:post_id' component={ResponseView}/>
     	</Route>
 
 	</Router>

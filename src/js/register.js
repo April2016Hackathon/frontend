@@ -20,17 +20,25 @@ export default class Register extends Component {
     return (
       <div className="register-wrapper">
         <Paper className="register-paper">
-
-        <h1>Sign Up</h1>
-        <SSF onData={::this.dataHandler}>
-          <input type='text'     name='username' placeholder='Username' className='register-input'/>
-          <br/>
-          <input type='password' name='password' placeholder='Password' className='register-input'/>
-          <br/>
-          <input type='email'    name='email'    placeholder='Email' className='register-input'/>
-          <br/>
-          <button>Register</button>
-        </SSF>
+          <div className='signup'>
+            <h1>Sign Up</h1>
+            <SSF onData={::this.dataHandler}>
+              <input type='text'     name='username' placeholder='Username' className='register-input'/>
+              <br/>
+              <input type='password' name='password' placeholder='Password' className='register-input'/>
+              <br/>
+              <input type='email'    name='email'    placeholder='Email' className='register-input'/>
+              <br/>
+              <button>Register</button>
+            </SSF>
+          </div>
+          <div className='image'>
+              <img
+                src='../images/mild_wild.png'
+                alt='Mild or Wild Logo'
+                width="150"
+              /> 
+          </div>     
         </Paper>
       </div>
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ajax } from 'jquery';
 import { hashHistory } from 'react-router';
 import SSF from 'react-simple-serial-form';
+import Paper from 'material-ui/lib/paper';
 
 export default class Register extends Component {
 

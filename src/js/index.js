@@ -9,17 +9,17 @@ import Dashboard from './dashboard';
 import Submission from './submission';
 import CurrentUserView from './currentUserView';
 import cookie from 'js-cookie';
+import ResponseView from './response_view';
 
 render ((
 	<Router history={hashHistory}>
-    <Route path='/login' component={LogIn}/>
-    <Route path='/register' component={Register}/>
-    <Route path='/:username' component={Dashboard}>
+    	<Route path='/login' component={LogIn}/>
+   		<Route path='/register' component={Register}/>
+    	<Route path='/:username' component={Dashboard}>
 			<IndexRoute component={Submission}/>
-      <Route path='/:username/new' component={Submission}/>
 			<Route path='/:username/mood' component={CurrentUserView}/>
 			<Route path='/:username/respond' component={ResponseView}/>
-    </Route>
+    	</Route>
 
 	</Router>
 

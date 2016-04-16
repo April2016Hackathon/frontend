@@ -27,10 +27,9 @@ export default class Dashboard extends Component {
 				/>
 			</header>
 			<aside>
-				<Link to={`${username}/new`}/>
-
-
-
+				<Link to={'/'}>Submission</Link>
+				<Link to={`${username}/mood`}>My Mood</Link>
+				<Link to={`${username}/respond`}>Elevate Moods</Link>
 			</aside>
 			<div className="main">
 			</div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import cookie from 'js-cookie';
 
 export default class Dashboard extends Component {
 
@@ -9,6 +10,7 @@ export default class Dashboard extends Component {
 			<div className="dashboard">
 			<header>
 				HEADER
+				<span></span>
 				<img
 					src='../images/mild_wild.png'
 					alt='Mild or Wild Logo'
@@ -20,7 +22,7 @@ export default class Dashboard extends Component {
 			<div className="main">
 			{this.props.children}
 			</div>
-
+			<button onClick={cookie.remove('currentUser')}>Log Out</button>
 			<footer>FOOTER</footer>
 
 

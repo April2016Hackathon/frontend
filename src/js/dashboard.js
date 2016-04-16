@@ -21,7 +21,6 @@ export default class Dashboard extends Component {
 
 	render() {
 		let currentUser = cookie.getJSON('currentUser')
-		console.log(cookie.getJSON('currentUser'))
 		return (
 
 			<div className="dashboard">
@@ -33,13 +32,15 @@ export default class Dashboard extends Component {
 					alt='Mild or Wild Logo'
 				/>
 			</header>
-			<aside>
+			<div className='main-wrapper'>
+				<aside>
 				{/*<Link to={`/${currentUser.username}`}>Submission</Link>*/}
 				{/*<Link to={`/${currentUser.username}/respond`}>Elevate Moods</Link>*/}
 				<PostFeed/>
-			</aside>
-			<div className="main">
+				</aside>
+				<div className="main">
 				{this.props.children}
+				</div>
 			</div>
 			<button onClick={this.logOut}>Log Out</button>
 			<footer>FOOTER</footer>

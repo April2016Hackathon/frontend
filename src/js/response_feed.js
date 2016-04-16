@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, {PropTypes, Component } from 'react';
 import { ajax } from 'jquery';
 
 export default class ResponseFeed extends Component {
+  static propTypes = {
+    post_id: PropTypes.number.isRequired
+  }
 
   constructor(...args){
     super(...args);
@@ -11,10 +14,11 @@ export default class ResponseFeed extends Component {
   }
 
   componentWillMount(){
-    let { post_id } = this.props.params;
+    let { post_id } = this.props;
       this.intervalID = setInterval(function () {
-      ajax(`http://blooming-springs-29783.herokuapp.com/posts/${post_id}/response`)
+      ajax(`http://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
       .then(responses => {
+        console.log(responses)
         this.setState({ responses })
       })
     }, 3000)

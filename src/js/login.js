@@ -20,17 +20,14 @@ export default class LogIn extends Component {
         type: 'POST',
         data: data,
         cached: false,
-        dataType: 'json',
-        processData: false,
-        contentType: false
+        dataType: 'json'
       }).then(resp => {
-        console.log(resp)
         ajaxSetup({
           headers: {
-            'Auth_Token': resp.auth_token
+            'X-Auth-Token': resp.auth_token
           }
         })
-        cookie.set(currentUser, {
+        cookie.set('currentUser', {
           user: resp.user_name,
           auth_token: resp.auth_token
         })

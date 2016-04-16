@@ -6,14 +6,12 @@ import SSF from 'react-simple-serial-form';
 export default class Register extends Component {
 
     dataHandler(newUser){
-      console.log(newUser)
       ajax({
         url: 'https://blooming-springs-29783.herokuapp.com/signup',
         type: 'POST',
+        data: newUser,
         cached: false,
-        dataType: 'json',
-        processData: false,
-        contentType: false
+        dataType: 'json'
       }).then(hashHistory.push('/login'))
     }
 
@@ -22,14 +20,11 @@ export default class Register extends Component {
       <div>
         <h1>Sign Up</h1>
         <SSF onData={::this.dataHandler}>
-          <input type='text' name='username' placeholder='Username'/>
+          <input type='text'     name='username' placeholder='Username'/>
           <input type='password' name='password' placeholder='Password'/>
-          <input type='email' name='email' placeholder='Email'/>
+          <input type='email'    name='email'    placeholder='Email'/>
           <button>Register</button>
         </SSF>
       </div>);
   }
 }
-
-Register.propTypes = {
-};

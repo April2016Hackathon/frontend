@@ -3,6 +3,7 @@ import SSF from 'react-simple-serial-form';
 import { Link, hashHistory } from 'react-router';
 import { ajax, ajaxSetup } from 'jquery';
 import cookie from 'js-cookie';
+import Paper from 'material-ui/lib/paper';
 
 /* TODO: NAMES NEED TO BE CORRECTED, GET INFO FROM BACK END */
 
@@ -41,12 +42,14 @@ export default class LogIn extends Component {
   render() {
     return (
       <div className='login-wrapper'>
+      <Paper className="paper">
         <SSF onData={::this.logIn}>
           <input type='text' name='username' placeholder='Username'/>
           <input type='password' name='password' placeholder='Password'/>
           <button>Submit</button>
         </SSF>
         <Link to='/register'>Register</Link>
+      </Paper>
       </div>
     );
   }

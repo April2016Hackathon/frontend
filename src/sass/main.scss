@@ -1,5 +1,16 @@
 /* CSS Entry Point */
 
 // Turn on freq used libraries
-@import 'normalize-css/normalize';
+//@import 'normalize-css/normalize';
 // @import 'font-awesome/scss/font-awesome';
+
+body {
+	background-color: #3576CD;
+}
+
+.paper {
+	width: 600px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}

@@ -11,11 +11,11 @@ import CurrentUserView from './currentUserView';
 
 render ((
 	<Router history={hashHistory}>
-    <Route path='/login' component={LogIn}/>
-    <Route path='/register' component={Register}/>
-    <Route path='/' component={CurrentUserView}>
-      {/*<IndexRoute component={StuffInDasboard}/>*/}
-    </Route>
+    	<Route path='/login' component={LogIn}/>
+    	<Route path='/register' component={Register}/>
+    	<Route path='/' component={Dashboard}>
+      		{/*<IndexRoute component={StuffInDasboard}/>*/}
+     	</Route>
 	</Router>
 
 

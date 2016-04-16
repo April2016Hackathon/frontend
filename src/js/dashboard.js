@@ -12,6 +12,7 @@ export default class Dashboard extends Component {
 				<img
 					src='../images/mild_wild.png'
 					alt='Mild or Wild Logo'
+
 				/>
 			</header>
 

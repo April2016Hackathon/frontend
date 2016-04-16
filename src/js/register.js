@@ -23,9 +23,12 @@ export default class Register extends Component {
 
         <h1>Sign Up</h1>
         <SSF onData={::this.dataHandler}>
-          <input type='text'     name='username' placeholder='Username'/>
-          <input type='password' name='password' placeholder='Password'/>
-          <input type='email'    name='email'    placeholder='Email'/>
+          <input type='text'     name='username' placeholder='Username' className='register-input'/>
+          <br/>
+          <input type='password' name='password' placeholder='Password' className='register-input'/>
+          <br/>
+          <input type='email'    name='email'    placeholder='Email' className='register-input'/>
+          <br/>
           <button>Register</button>
         </SSF>
         </Paper>

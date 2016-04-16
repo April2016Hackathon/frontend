@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SSF from 'react-simple-serial-form';
 import { ajax } from 'jquery';
 import { hashHistory } from 'react-router';
+import cookie from 'js-cookie';
 
 export default class Submission extends Component {
     // constructor () {
@@ -10,14 +11,18 @@ export default class Submission extends Component {
     // }
 
 	dataHandler(subData){
-        console.log(subData);
 				let currentUser = cookie.getJSON('currentUser')
 				ajax({
 					url: 'https://blooming-springs-29783.herokuapp.com/posts/create',
 					type: 'POST',
 					data: subData,
-					dataType: 'json'
-				}).then(hashHistory.push(`/${currentUser.username}/mood`))
+					dataType: 'json',
+					headers: {
+							'X-Auth-Token': currentUser.auth_token
+					}
+				}).then((resp =>{
+					hashHistory.push(`/${resp.post.username}/${resp.post.id}/mood`)
+				}))
     }
 
     render () {
@@ -38,6 +43,9 @@ export default class Submission extends Component {
 							<label>
 								<input type="text" 	name="title" placeholder="Title your post..." />
 							</label>
+							{/*<Link to={`/${currentUser.username}/mood`}>My Mood</Link>*/}
+
+
               <button>Submit</button>
     		</SSF>
     	</div>

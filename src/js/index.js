@@ -7,7 +7,7 @@ import LogIn from './login';
 import Register from './register';
 import Dashboard from './dashboard';
 import Submission from './submission';
-// import CurrentUserView from './currentUserView';
+import CurrentUserView from './currentUserView';
 import cookie from 'js-cookie';
 
 render ((
@@ -15,8 +15,10 @@ render ((
     <Route path='/login' component={LogIn}/>
     <Route path='/register' component={Register}/>
     <Route path='/:username' component={Dashboard}>
-      <IndexRoute component={Submission}/>
-			{/*<Route path='/:username/mood' component={CurrentUserView}/>*/}
+			<IndexRoute component={Submission}/>
+      <Route path='/:username/new' component={Submission}/>
+			<Route path='/:username/mood' component={CurrentUserView}/>
+			<Route path='/:username/respond' component={ResponseView}/>
     </Route>
 
 	</Router>

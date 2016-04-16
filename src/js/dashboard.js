@@ -27,7 +27,15 @@ export default class Dashboard extends Component {
 					alt='Mild or Wild Logo'
 				/>
 			</header>
+<<<<<<< HEAD
 			<aside><</aside>
+=======
+			<aside>
+				<Link to={`/${currentUser.username}`}>Submission</Link>
+				<Link to={`/${currentUser.username}/mood`}>My Mood</Link>
+				<Link to={`/${currentUser.username}/respond`}>Elevate Moods</Link>
+			</aside>
+>>>>>>> fe5b6b45f1ed7cfaf3435f1d20674647d6151dc3
 			<div className="main">
 				
 			</div>

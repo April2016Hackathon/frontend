@@ -6,8 +6,9 @@ import SSF from 'react-simple-serial-form';
 export default class Register extends Component {
 
     dataHandler(newUser){
+      console.log(newUser)
       ajax({
-        url: 'http://',
+        url: 'https://blooming-springs-29783.herokuapp.com/signup',
         type: 'POST',
         cached: false,
         dataType: 'json',

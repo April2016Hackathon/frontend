@@ -10,12 +10,12 @@ export default class LogIn extends Component {
 
   logIn(data){
     if (
-       data.user_name !== '' 
-    && data.user_name.length > 2
-    && data.user_name.length < 16 )
+       data.username !== ''
+    && data.username.length > 2
+    && data.username.length < 16 )
     {
       ajax({
-        url: 'http://',
+        url: 'https://blooming-springs-29783.herokuapp.com/login',
         type: 'POST',
         data: data,
         cached: false,
@@ -23,9 +23,10 @@ export default class LogIn extends Component {
         processData: false,
         contentType: false
       }).then(resp => {
+        console.log(resp)
         ajaxSetup({
           headers: {
-            'X-auth_token': resp.auth_token
+            'Auth_Token': resp.auth_token
           }
         })
         cookie.set(currentUser, {

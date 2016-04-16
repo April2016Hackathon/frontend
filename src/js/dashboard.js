@@ -4,19 +4,22 @@ import {Link} from 'react-router';
 export default class Dashboard extends Component {
 
 	render() {
-		<div className="dashboard">
+		return (
+
+			<div className="dashboard">
 			<header>HEADER</header>
 
 			<aside>FEED</aside>
 
 			<div className="main">
-				{this.props.children}
+			{this.props.children}
 			</div>
 
 			<footer>FOOTER</footer>
 
 
-		</div>
+			</div>
+		)
 
 
 	}

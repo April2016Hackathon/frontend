@@ -37,8 +37,8 @@ export default class LogIn extends Component {
     return (
       <div className='login-wrapper'>
         <SSF onData={::this.logIn}>
-          <input type='text' name={/*user name goes here*/}/>
-          <input type='password' name={/*password goes here*/}/>
+          <input type='text' name='username' placeholder='Username'/>
+          <input type='password' name='password' placeholder='Password'/>
           <button>Submit</button>
         </SSF>
       </div>

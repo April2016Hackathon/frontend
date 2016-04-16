@@ -9,7 +9,10 @@ export default class Dashboard extends Component {
 			<div className="dashboard">
 			<header>
 				HEADER
-				<img src='../images/mild_wild.png' alt='Mild or Wild Logo'/>
+				<img
+					src='../images/mild_wild.png'
+					alt='Mild or Wild Logo'
+				/>
 			</header>
 
 			<aside>FEED</aside>

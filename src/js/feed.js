@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ajax } from 'jquery';
 
-export default class MyComponent extends Component {
+export default class PostFeed extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -11,7 +11,7 @@ export default class MyComponent extends Component {
 
   componentWillMount(){
     let this.pollingInt = setInterval(
-      ajax('http://').then(newPosts => {
+      ajax('https://blooming-springs-29783.herokuapp.com/posts/index').then(newPosts => {
         this.setState({
           posts: newPosts
         })
@@ -24,7 +24,7 @@ export default class MyComponent extends Component {
   }
 
   makePost(post){
-    <Link><div className='post'>{post.status}</div></Link>
+    <Link><div className='post'>{post.user} {post.title}</div></Link>
   }
 
   render() {

@@ -14,13 +14,10 @@ componentWillMount(){
 	// ajax(`https://blooming-springs-29783.herokuapp.com/posts/${this.props.params.post_id}`)
 	// .then(post => {
 	// 	this.setState({post})
-<<<<<<< HEAD
 
-	ajax('https://blooming-springs-29783.herokuapp.com/')
-=======
 	let { user_id } = this.props.params;
 	ajax(`https://blooming-springs-29783.herokuapp.com/${user_id}/`)
->>>>>>> dcedcbc6288d89ae7f652476a0987af1f5c9a8db
+
 	.then (resp => {
 		this.setState({post: resp});
 	}

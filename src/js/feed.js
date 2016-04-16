@@ -6,17 +6,29 @@ export default class PostFeed extends Component {
   constructor(...args) {
     super(...args);
     this.state = {
-      posts: []
+      posts: [],
+      loading: true
     }
   }
-
+getLatestPosts(){
+  ajax('https://blooming-springs-29783.herokuapp.com/posts/index')
+    .then(newPosts => {
+      console.log("B recieving req")
+      this.setState({
+        posts: newPosts,
+        loading: false
+      })
+    })
+}
   componentWillMount(){
+    this.getLatestPosts()
     this.pollingInt = setInterval( () => {
       ajax('https://blooming-springs-29783.herokuapp.com/posts/index')
         .then(newPosts => {
           console.log("B recieving req")
           this.setState({
-            posts: newPosts
+            posts: newPosts,
+            loading: false
           })
         })
     }, 3000)
@@ -39,5 +51,17 @@ export default class PostFeed extends Component {
       <div>
           {posts.map(::this.makePost)}
       </div>);
+  }
+  renderLoading(){
+    return (
+      <h1>Loading...</h1>
+    )
+  }
+  loading(){
+    let { loading } = this.state
+    loading
+    ? this.render()
+    : this.renderLoading()
+
   }
 }

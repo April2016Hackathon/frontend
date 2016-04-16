@@ -21,7 +21,8 @@ export default class Submission extends Component {
 							'X-Auth-Token': currentUser.auth_token
 					}
 				}).then((resp =>{
-					hashHistory.push(`/${resp.post.username}/${resp.post.id}/mood`)
+					console.log(resp)
+					hashHistory.push(`/${resp.post.user_id}/mood`)
 				}))
     }
 

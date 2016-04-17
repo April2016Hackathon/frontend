@@ -43,7 +43,7 @@ export default class ResponseView extends Component {
 		let { post } = this.state;
 		return (
 			<div className="add_a_comment">
-				<h1 className="elevate-title"> Elevate Others' Moods!</h1>
+				<h1 className="elevate-title"> Make me feel better...</h1>
 					<div>
 						<span>{post.user_id} </span>
 						<span>{post.text}</span>

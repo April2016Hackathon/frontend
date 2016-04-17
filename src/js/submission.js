@@ -22,7 +22,7 @@ export default class Submission extends Component {
 					}
 				}).then((resp =>{
 					console.log(resp)
-					hashHistory.push(`/${resp.post.user_id}/${resp.post.id}/mood`)
+					hashHistory.push(`/${resp.post.user_id}/mood`)
 				}))
     }
 
@@ -48,7 +48,7 @@ export default class Submission extends Component {
               </label>
               <br/>
 							<label className="tell-us">
-                <input type="textarea"  name="text"  placeholder="Tell us why..." />
+                <textarea  name="text"  placeholder="Tell us why..." ></textarea>
 							</label>
               <br/>
 							{/*<Link to={`/${currentUser.username}/mood`}>My Mood</Link>*/}

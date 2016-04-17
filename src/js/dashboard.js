@@ -60,7 +60,7 @@ export default class Dashboard extends Component {
 				<aside>
 
 					<Paper className="aside-paper">
-
+						<h2> Elevate A Mood </h2>
 						<PostFeed/>
 					</Paper>
 

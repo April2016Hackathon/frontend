@@ -33,26 +33,37 @@ export default class Dashboard extends Component {
 					height="75"
 				/>
 
-				<span><i className="fa fa-user" >{currentUser.username}</i></span>
+				<span><i className="fa fa-user" id="person-icon">  {currentUser.username}</i>
+					<button onClick={this.logOut}>Log Out</button>
+					<br/>
+					<br/>				
+				    <div className="nav">
+						<Link to={`/${currentUser.id}/${post_id}/responses`}> Responses   </Link>
+						<Link to={`/${currentUser.username}`}> Submission   </Link>
+						<Link to={`/${currentUser.id}/mood`}> My Mood   </Link>
+					</div>
+				 </span>
 			</header>
 			<div className='main-wrapper'>
 				<aside>
-				<Paper className="aside-paper">
-						<Link to={`/${currentUser.id}/${post_id}/responses`}>Responses</Link>
-						<Link to={`/${currentUser.username}`}>Submission</Link>
-						<Link to={`/${currentUser.id}/mood`}>My Mood</Link>
-					<PostFeed/>
-				</Paper>
+					<Paper className="aside-paper">
+
+						<PostFeed/>
+					</Paper>
 
 				</aside>
-				<div className="main">
-				{this.props.children}
+				<div className="main-content">
+					<Paper className="right-main-content">
+
+						{this.props.children}
+
+					</Paper>
 				</div>
 			</div>
 
-			<footer>
-				<button onClick={this.logOut}>Log Out</button>
-			</footer>
+
+
+
 
 
 			</div>

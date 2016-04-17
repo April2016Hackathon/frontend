@@ -22,7 +22,7 @@ export default class Submission extends Component {
 					}
 				}).then((resp =>{
 					console.log(resp)
-					hashHistory.push(`/${resp.post.user_id}/${resp.post.id}/mood`)
+					hashHistory.push(`/${resp.post.user_id}/mood`)
 				}))
     }
 

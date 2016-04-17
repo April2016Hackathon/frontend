@@ -16,7 +16,7 @@ import cookie from 'js-cookie';
 render ((
 	<Router history={hashHistory}>
     	<Route path='/login' component={LogIn}/>
-   		<Route path='/register' component={Register}/>
+   		<Route path='/' component={Register}/>
     	<Route path='/:user_id' component={Dashboard}>
 				<IndexRoute component={Submission}/>
 				<Route path='/:user_id/:post_id/responses' component={ResponseFeed}/>

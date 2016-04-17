@@ -38,7 +38,7 @@ getLatestPosts(){
 
   makePost(post){
     return (
-      <Link to={`/posts/${post.id}`}><div className='post'>{post.user} {post.title}</div></Link>
+      <Link key={post.id} to={`/posts/${post.id}`}><div className='post'>{post.user} {post.title}</div></Link>
 
     )
   }

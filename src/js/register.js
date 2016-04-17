@@ -31,8 +31,7 @@ export default class Register extends Component {
               <br/>
               <button>Register</button>
             </SSF>
-            Already a user?
-            <br/>
+            <span>Already a user?</span>
             <button onClick={()=> hashHistory.push('/login')}>Log In</button>
           </div>
               <img

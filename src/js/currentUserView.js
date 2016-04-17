@@ -59,8 +59,7 @@ componentWillMount(){
 				<div className="myprofile">
 					<h1>{currentUser.username}</h1>
 					<h3>{post.title}</h3>
-					<div>{post.text}</div>
-					{/*<ResponseFeed/>*/}
+					<div className="myprofile-text">{post.text}</div>
 				</div>
 			</div>
 			)

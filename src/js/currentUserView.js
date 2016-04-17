@@ -59,7 +59,7 @@ componentWillMount(){
 				<div className="myprofile">
 					<h1>{currentUser.username}</h1>
 					<h3>{post.title}</h3>
-					<div>{post.text}</div>
+					<div className="myprofile-text">{post.text}</div>
 					{/*<ResponseFeed post_id={post_id}/>*/}
 				</div>
 			</div>

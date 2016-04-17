@@ -44,14 +44,17 @@ export default class ResponseView extends Component {
 		return (
 			<div className="add_a_comment">
 				<h1 className="elevate-title"> Make me feel better...</h1>
-					<div>
+					<div className="profile-of-other">
 						<span>{post.user_id} </span>
+						<br/>
 						<span>{post.text}</span>
+						<br/>
 						<span>{post.title}</span>
 					</div>
 					{/*<ResponseFeed/>*/}
 				<SSF onData={::this.dataHandler}>
-					<input type="text" name="text" placeholder="Elevate my mood.."/>
+					<textarea name="text" placeholder="Elevate my mood.." id="mood-comment"></textarea>
+					<br/>
 					<button>Submit</button>
 				</SSF>
 

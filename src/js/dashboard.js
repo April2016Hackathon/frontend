@@ -39,7 +39,7 @@ export default class Dashboard extends Component {
 			<div className='main-wrapper'>
 				<aside>
 				<Paper className="aside-paper">
-						<Link to={`/${post_id}/responses`}>Responses</Link>
+						<Link to={`/${currentUser.id}/${post_id}/responses`}>Responses</Link>
 						<Link to={`/${currentUser.username}`}>Submission</Link>
 						<Link to={`/${currentUser.id}/mood`}>My Mood</Link>
 					<PostFeed/>

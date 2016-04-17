@@ -20,14 +20,9 @@ render ((
     	<Route path='/:username' component={Dashboard}>
 				<IndexRoute component={Submission}/>
 				<Route path='/:post_id/responses' component={ResponseFeed}/>
-				<Route path='/:user_id/mood' component={CurrentUserView}/>
+				<Route path='/:user_id/:post_id/mood' component={CurrentUserView}/>
 				<Route path='/posts/:post_id' component={ResponseView}/>
     	</Route>
 	</Router>
 
 ), document.querySelector('.app'))
-
-
-
-
-

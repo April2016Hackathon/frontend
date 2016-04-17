@@ -24,6 +24,9 @@ export default class ResponseFeed extends Component {
   //   }, 3000)
   // }
 
+  clickHandler(){
+    ajax(`https://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
+  }
   componentWillMount(){
     let { post_id } = this.props.params;
     this.intervalID = setInterval( () => {
@@ -39,7 +42,7 @@ export default class ResponseFeed extends Component {
   makeResponse(response){
     return (
 
-      <li>{response.user} {response.text}</li>
+      <li onClick={::this.clickHandler}>{response.user} {response.text}</li>
     )
   }
 
@@ -72,7 +75,7 @@ export default class ResponseFeed extends Component {
           {responses.map(::this.makeResponse)}
         </ul>
         <SSF onData={::this.dataHandler}>
-          <input type="text" name="responses" placeholder="Elevate my mood.."/>
+          <input type="text" name="text" placeholder="Elevate my mood.."/>
           <button>Submit</button>
         </SSF>
       </div>

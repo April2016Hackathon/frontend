@@ -51,7 +51,7 @@ export default class ResponseView extends Component {
 					</div>
 					{/*<ResponseFeed/>*/}
 				<SSF onData={::this.dataHandler}>
-					<input type="text" name="responses" placeholder="Elevate my mood.."/>
+					<input type="text" name="text" placeholder="Elevate my mood.."/>
 					<button>Submit</button>
 				</SSF>
 

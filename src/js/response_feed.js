@@ -3,7 +3,7 @@ import { ajax } from 'jquery';
 
 export default class ResponseFeed extends Component {
   static propTypes = {
-    post_id: PropTypes.number.isRequired
+    post_id: PropTypes.number
   }
 
   constructor(...args){

@@ -13,7 +13,6 @@ export default class PostFeed extends Component {
 getLatestPosts(){
   ajax('https://blooming-springs-29783.herokuapp.com/posts/index')
     .then(newPosts => {
-      console.log("B recieving req")
       this.setState({
         posts: newPosts,
         loading: false
@@ -40,7 +39,7 @@ getLatestPosts(){
 
   makePost(post){
     return (
-      <Link to={`/posts/${post_id}`}><div className='post'>{post.user} {post.title}</div></Link>
+      <Link to={`/posts/${post.id}`}><div className='post'>{post.user} {post.title}</div></Link>
 
     )
   }

@@ -6,7 +6,16 @@
 
 body {
 	//background-color: #9ca7c6;
-	background-color: #ffffff;
+	height:100vh;
+	width:100vw;
+
+
+	background: rgb(53,118,205); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(53,118,205,1) 0%, rgba(41,137,216,1) 50%, rgba(92,198,219,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(53,118,205,1) 0%,rgba(41,137,216,1) 50%,rgba(92,198,219,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(53,118,205,1) 0%,rgba(41,137,216,1) 50%,rgba(92,198,219,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3576cd', endColorstr='#5cc6db',GradientType=0 ); /* IE6-9 */
+
 }
 
 .login-paper {
@@ -15,6 +24,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	padding-top: 40px;
+	margin-top: 30px;
 
 	img {
 
@@ -118,6 +128,16 @@ body {
 		}
 
 	}
+	aside {
+		.aside-paper {
+			width: 300px;
+			margin-left: 30px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			z-index: 15px;
+		}
+
+	}
 }
 
 .main-wrapper {
@@ -128,6 +148,10 @@ body {
 footer {
 	background-color: #3576CD;
 	height: 100px;
+	border-top: .5px solid black;
+	button {
+		
+	}
 
 }
 

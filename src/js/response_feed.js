@@ -2,9 +2,6 @@ import React, {PropTypes, Component } from 'react';
 import { ajax } from 'jquery';
 
 export default class ResponseFeed extends Component {
-  static propTypes = {
-    post_id: PropTypes.number
-  }
 
   constructor(...args){
     super(...args);
@@ -13,20 +10,35 @@ export default class ResponseFeed extends Component {
     }
   }
 
-  componentWillMount(){
-    let { post_id } = this.props;
-      this.intervalID = setInterval(function () {
-      ajax(`http://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
-      .then(responses => {
-        console.log(responses)
-        this.setState({ responses })
-      })
-    }, 3000)
+  // componentWillMount(){
+  //   console.log(this.props.params)
+  //   let { post_id } = this.props.params;
+  //     this.intervalID = setInterval(function () {
+  //       ajax(`https://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
+  //     .then(responses => {
+  //       console.log(responses)
+  //       this.setState( {responses: responses} )
+  //     })
+  //   }, 3000)
+  // }
 
+  componentWillMount(){
+    let { post_id } = this.props.params;
+    this.intervalID = setInterval( () => {
+      ajax(`https://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
+        .then(newResps => {
+          this.setState({
+            responses: newResps,
+          })
+        })
+    }, 3000)
   }
 
   makeResponse(response){
-    <li>{response.user} {response.words}</li>
+    return (
+
+      <li>{response.user} {response.text}</li>
+    )
   }
 
   componentWillUnmount(){
@@ -35,6 +47,7 @@ export default class ResponseFeed extends Component {
 
   render() {
     let { responses } = this.state;
+    console.log(responses)
     return (
       <div>
         <ul>

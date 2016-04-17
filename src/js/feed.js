@@ -24,7 +24,6 @@ getLatestPosts(){
     this.pollingInt = setInterval( () => {
       ajax('https://blooming-springs-29783.herokuapp.com/posts/index')
         .then(newPosts => {
-          console.log("B recieving req")
           this.setState({
             posts: newPosts,
             loading: false

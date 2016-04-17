@@ -21,6 +21,7 @@ export default class Dashboard extends Component {
 
 	render() {
 		let currentUser = cookie.getJSON('currentUser')
+		console.log(currentUser)
 		return (
 
 			<div className="dashboard">
@@ -35,7 +36,7 @@ export default class Dashboard extends Component {
 			<div className='main-wrapper'>
 				<aside>
 				{/*<Link to={`/${currentUser.username}`}>Submission</Link>*/}
-				{/*<Link to={`/${currentUser.username}/respond`}>Elevate Moods</Link>*/}
+				{/*<Link to={`/${currentUser.id}/${post_id}/mood`}>My Mood</Link>*/}
 				<PostFeed/>
 				</aside>
 				<div className="main">

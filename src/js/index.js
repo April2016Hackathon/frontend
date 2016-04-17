@@ -9,6 +9,7 @@ import Dashboard from './dashboard';
 import Submission from './submission';
 import CurrentUserView from './currentUserView';
 import ResponseView from './response_view';
+import ResponseFeed from './response_feed';
 import cookie from 'js-cookie';
 
 
@@ -19,7 +20,7 @@ render ((
     	<Route path='/:username' component={Dashboard}>
 				<IndexRoute component={Submission}/>
 				<Route path='/:user_id/:post_id/mood' component={CurrentUserView}/>
-				<Route path='/:post_id' component={ResponseView}/>
+				<Route path='posts/:post_id' params={'/:post_id'} component={ResponseView}/>
     	</Route>
 	</Router>
 

@@ -29,7 +29,7 @@ export default class LogIn extends Component {
           }
         })
         cookie.set('currentUser', resp.user, { expires: 7 });
-        hashHistory.push(`/${resp.user.username}`)
+        hashHistory.push(`/${resp.user.id}`)
       })
     }
   }
@@ -57,8 +57,8 @@ export default class LogIn extends Component {
         <Link to='/register' className='register-link'>Register</Link>
         </div>
         <div className="instructions">
-          <p> Are you <span className='logo-mild'>mild</span> or <span className='logo-wild'>wild</span>? 
-            <br/>  
+          <p> Are you <span className='logo-mild'>mild</span> or <span className='logo-wild'>wild</span>?
+            <br/>
           Choose your mood and elevate others' moods.</p>
         </div>
       </Paper>

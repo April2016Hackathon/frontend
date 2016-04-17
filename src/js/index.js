@@ -17,9 +17,9 @@ render ((
 	<Router history={hashHistory}>
     	<Route path='/login' component={LogIn}/>
    		<Route path='/register' component={Register}/>
-    	<Route path='/:username' component={Dashboard}>
+    	<Route path='/:user_id' component={Dashboard}>
 				<IndexRoute component={Submission}/>
-				<Route path='/:post_id/responses' component={ResponseFeed}/>
+				<Route path='/:user_id/:post_id/responses' component={ResponseFeed}/>
 				<Route path='/:user_id/:post_id/mood' component={CurrentUserView}/>
 				<Route path='/posts/:post_id' component={ResponseView}/>
     	</Route>

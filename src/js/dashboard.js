@@ -6,6 +6,7 @@ import Submission from './submission';
 import PostFeed from './feed';
 import cookie from 'js-cookie';
 import Paper from 'material-ui/lib/paper';
+import { ajax } from 'jquery';
 
 export default class Dashboard extends Component {
 	constructor(...args){
@@ -13,6 +14,8 @@ export default class Dashboard extends Component {
 		// this.state = {
 		// 	view: <Submission/>
 		// }
+		this.state = { post_id: null }
+		console.log('hello1', this, this.state);
 	}
 
 	logOut(){
@@ -20,8 +23,20 @@ export default class Dashboard extends Component {
 		hashHistory.push('/login');
 	}
 
+	componentWillMount() {
+		let { user_id } = this.props.params;
+		ajax(`https://blooming-springs-29783.herokuapp.com/posts/${user_id}/newest`)
+			.then (data => {
+				this.setState({post_id: data.postings.id});
+				console.log('hello2', this, this.state, data.postings);
+
+			})
+	}
+
 	render() {
-		let {user_id , post_id} = this.props.params;
+		let {user_id } = this.props.params;
+		console.log('hello3', this, this.state);
+		let { post_id } = this.state;
 		let currentUser = cookie.getJSON('currentUser')
 		return (
 
@@ -46,10 +61,12 @@ export default class Dashboard extends Component {
 			</header>
 			<div className='main-wrapper'>
 				<aside>
+
 					<Paper className="aside-paper">
 
 						<PostFeed/>
 					</Paper>
+
 
 				</aside>
 				<div className="main-content">

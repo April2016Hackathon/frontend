@@ -31,6 +31,7 @@ export default class Dashboard extends Component {
 					width="75"
 					height="75"
 				/>
+
 				<span>{currentUser.username}</span>
 			</header>
 			<div className='main-wrapper'>
@@ -50,6 +51,8 @@ export default class Dashboard extends Component {
 			</div>
 		)
 
-
+				 // <Link>Submission</Link>
+				// <Link>Elevate</Link>
+				// <Link>Log out</Link>
 	}
 }

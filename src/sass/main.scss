@@ -1,11 +1,12 @@
 /* CSS Entry Point */
 
 // Turn on freq used libraries
-//@import 'normalize-css/normalize';
+@import 'normalize-css/normalize';
 // @import 'font-awesome/scss/font-awesome';
 
 body {
-	background-color: #3576CD;
+	//background-color: #9ca7c6;
+	background-color: #ffffff;
 }
 
 .login-paper {
@@ -105,7 +106,8 @@ body {
 		justify-content: space-between;	
 		padding-top: 10px;
 		padding-bottom: 10px;
-		background-color: #9ca7c6;
+		background-color: #C96749;
+
 		img { 
 			margin-left: 30px;
 		}
@@ -122,3 +124,10 @@ body {
 	display: flex;
 	justify-content: space-between;
 }
+
+footer {
+	background-color: #3576CD;
+	height: 100px;
+
+}
+

@@ -20,8 +20,8 @@ export default class Dashboard extends Component {
 	}
 
 	render() {
+		let {user_id , post_id} = this.props.params;
 		let currentUser = cookie.getJSON('currentUser')
-		console.log(currentUser)
 		return (
 
 			<div className="dashboard">
@@ -37,8 +37,9 @@ export default class Dashboard extends Component {
 			</header>
 			<div className='main-wrapper'>
 				<aside>
-				{/*<Link to={`/${currentUser.username}`}>Submission</Link>*/}
-				{/*<Link to={`/${currentUser.id}/${post_id}/mood`}>My Mood</Link>*/}
+				<Link to={`/${post_id}/responses`}>Responses</Link>
+				<Link to={`/${currentUser.username}`}>Submission</Link>
+				<Link to={`/${currentUser.id}/mood`}>My Mood</Link>
 				<PostFeed/>
 				</aside>
 				<div className="main">

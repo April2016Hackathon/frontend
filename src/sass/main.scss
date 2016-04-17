@@ -2,7 +2,7 @@
 
 // Turn on freq used libraries
 @import 'normalize-css/normalize';
-// @import 'font-awesome/scss/font-awesome';
+@import 'font-awesome/scss/font-awesome';
 
 body {
 	//background-color: #9ca7c6;
@@ -116,7 +116,7 @@ body {
 		justify-content: space-between;	
 		padding-top: 10px;
 		padding-bottom: 10px;
-		background-color: #C96749;
+		background-color: #ffffff;
 
 		img { 
 			margin-left: 30px;
@@ -130,11 +130,22 @@ body {
 	}
 	aside {
 		.aside-paper {
-			width: 300px;
-			margin-left: 30px;
-			margin-top: 20px;
-			margin-bottom: 20px;
-			z-index: 15px;
+			// width: 300px;
+			// margin-left: 30px;
+			// margin-top: 20px;
+			// margin-bottom: 20px;
+			// z-index: 15px;
+			// width:500px;
+
+		    height:400px;
+		    margin:auto;
+		    border:1px solid black;
+		    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		    margin-top: 120px;
+		    padding-left: 20px;
+		    a {
+		    	text-decoration: none;
+		    }
 		}
 
 	}

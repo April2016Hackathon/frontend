@@ -47,7 +47,7 @@ getLatestPosts(){
   render() {
     let { posts } = this.state;
     return (
-      <div>
+      <div className="postfeed">
           {posts.map(::this.makePost)}
       </div>);
   }

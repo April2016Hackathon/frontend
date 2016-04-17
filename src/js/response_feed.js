@@ -40,9 +40,10 @@ export default class ResponseFeed extends Component {
   }
 
   makeResponse(response){
+    console.log(response)
     return (
 
-      <li onClick={::this.clickHandler}>{response.user} {response.text}</li>
+      <li key={response.id} onClick={::this.clickHandler}>{response.user} {response.text}</li>
     )
   }
 

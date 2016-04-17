@@ -15,7 +15,6 @@ export default class Dashboard extends Component {
 		// 	view: <Submission/>
 		// }
 		this.state = { post_id: null }
-		console.log('hello1', this, this.state);
 	}
 
 	logOut(){
@@ -28,14 +27,12 @@ export default class Dashboard extends Component {
 		ajax(`https://blooming-springs-29783.herokuapp.com/posts/${user_id}/newest`)
 			.then (data => {
 				this.setState({post_id: data.postings.id});
-				console.log('hello2', this, this.state, data.postings);
 
 			})
 	}
 
 	render() {
 		let {user_id } = this.props.params;
-		console.log('hello3', this, this.state);
 		let { post_id } = this.state;
 		let currentUser = cookie.getJSON('currentUser')
 		return (
@@ -51,7 +48,7 @@ export default class Dashboard extends Component {
 				<span><i className="fa fa-user" id="person-icon">  {currentUser.username}</i>
 					<button onClick={this.logOut}>Log Out</button>
 					<br/>
-					<br/>				
+					<br/>
 				    <div className="nav">
 						<Link to={`/${currentUser.id}/${post_id}/responses`}> Responses   </Link>
 						<Link to={`/${currentUser.username}`}> Submission   </Link>

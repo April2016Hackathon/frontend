@@ -31,13 +31,16 @@ export default class Register extends Component {
               <br/>
               <button>Register</button>
             </SSF>
+            Already a user?
+            <br/>
+            <button onClick={()=> hashHistory.push('/login')}>Log In</button>
           </div>
               <img
                 src='../images/mild_wild.png'
                 alt='Mild or Wild Logo'
                 width="150"
-              /> 
- 
+              />
+
         </Paper>
       </div>
 

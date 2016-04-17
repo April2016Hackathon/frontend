@@ -25,6 +25,7 @@ export default class ResponseFeed extends Component {
   // }
 
   clickHandler(){
+    let {post_id} = this.props.params;
     ajax(`https://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
   }
   componentWillMount(){
@@ -33,7 +34,7 @@ export default class ResponseFeed extends Component {
       ajax(`https://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`)
         .then(newResps => {
           this.setState({
-            responses: newResps,
+            responses: newResps
           })
         })
     }, 3000)

@@ -27,7 +27,6 @@ export default class Dashboard extends Component {
 		ajax(`https://blooming-springs-29783.herokuapp.com/posts/${user_id}/newest`)
 			.then (data => {
 				this.setState({post_id: data.postings.id});
-
 			})
 	}
 

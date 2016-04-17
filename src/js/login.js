@@ -54,7 +54,7 @@ export default class LogIn extends Component {
         </SSF>
         </div>
         <div className='login-right'>
-        <Link to='/register' className='register-link'>Register</Link>
+        <Link to='/' className='register-link'>Register</Link>
         </div>
         <div className="instructions">
           <p> Are you <span className='logo-mild'>mild</span> or <span className='logo-wild'>wild</span>?

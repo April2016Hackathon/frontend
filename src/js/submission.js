@@ -32,18 +32,25 @@ export default class Submission extends Component {
     	<div className="submission">
     		<h1>My Moods</h1>
             <SSF onData={::this.dataHandler}>
-              <label>MILD
+              <label className="radio-button">
                 <input type="radio" name="mood" value={true} />
+                MILD
               </label>
-              <label>WILD
+              <label className="radio-button">
                 <input type="radio" name="mood" value={false} />
+                WILD
               </label>
-              <label>
-                <input type="text" 	name="text"  placeholder="Tell us why..." />
+              <br/>
+              <br/>
+              <label className="post-title">
+                <input type="text"  name="title" placeholder="Title your post..." />                
+
               </label>
-							<label>
-								<input type="text" 	name="title" placeholder="Title your post..." />
+              <br/>
+							<label className="tell-us">
+                <input type="textarea"  name="text"  placeholder="Tell us why..." />
 							</label>
+              <br/>
 							{/*<Link to={`/${currentUser.username}/mood`}>My Mood</Link>*/}
 
 

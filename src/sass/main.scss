@@ -212,9 +212,40 @@ body {
 
 }
 
+.submission {
+	position: relative;
+	// h1 {
+	// 	position: absolute;
+	// 	top: 30px;
+	// 	left: 10px;
+	// }
+	// .radio-button {
+	// 	position: absolute;
+	// 	top: 70px;
+	// 	left: 10px;
+
+	// }
+	label.post-title {
+		position: absolute;
+		top: 100px;
+		left: 60px;
+		width: 300px;
+	}
+
+}
+.tell-us {
+	width: 750px;
+	height: 300px;
+	border: 1px solid black;
+
+}
+
+
 .add_a_comment {
 	.elevate-title {
-
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 30px;
 	}
 
 

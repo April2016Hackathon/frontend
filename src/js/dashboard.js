@@ -5,6 +5,7 @@ import ResponseView from './response_view';
 import Submission from './submission';
 import PostFeed from './feed';
 import cookie from 'js-cookie';
+import Paper from 'material-ui/lib/paper';
 
 export default class Dashboard extends Component {
 	constructor(...args){
@@ -37,17 +38,22 @@ export default class Dashboard extends Component {
 			</header>
 			<div className='main-wrapper'>
 				<aside>
-				<Link to={`/${post_id}/responses`}>Responses</Link>
-				<Link to={`/${currentUser.username}`}>Submission</Link>
-				<Link to={`/${currentUser.id}/mood`}>My Mood</Link>
-				<PostFeed/>
+				<Paper className="aside-paper">
+						<Link to={`/${post_id}/responses`}>Responses</Link>
+						<Link to={`/${currentUser.username}`}>Submission</Link>
+						<Link to={`/${currentUser.id}/mood`}>My Mood</Link>
+					<PostFeed/>
+				</Paper>
+
 				</aside>
 				<div className="main">
 				{this.props.children}
 				</div>
 			</div>
-			<button onClick={this.logOut}>Log Out</button>
-			<footer>FOOTER</footer>
+
+			<footer>
+				<button onClick={this.logOut}>Log Out</button>
+			</footer>
 
 
 			</div>

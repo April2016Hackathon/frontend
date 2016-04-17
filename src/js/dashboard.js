@@ -21,8 +21,8 @@ export default class Dashboard extends Component {
 	}
 
 	render() {
+		let {user_id , post_id} = this.props.params;
 		let currentUser = cookie.getJSON('currentUser')
-		console.log(currentUser)
 		return (
 
 			<div className="dashboard">
@@ -38,17 +38,19 @@ export default class Dashboard extends Component {
 			<div className='main-wrapper'>
 				<aside>
 				<Paper className="aside-paper">
-					{/*<Link to={`/${currentUser.username}`}>Submission</Link>*/}
-					{/*<Link to={`/${currentUser.id}/${post_id}/mood`}>My Mood</Link>*/}
+						<Link to={`/${currentUser.id}/${post_id}/responses`}>Responses</Link>
+						<Link to={`/${currentUser.username}`}>Submission</Link>
+						<Link to={`/${currentUser.id}/mood`}>My Mood</Link>
 					<PostFeed/>
 				</Paper>
+
 				</aside>
 				<div className="main">
 				{this.props.children}
 				</div>
 			</div>
 
-			<footer>			
+			<footer>
 				<button onClick={this.logOut}>Log Out</button>
 			</footer>
 

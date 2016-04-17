@@ -13,7 +13,7 @@ export default class CurrentUserView extends Component {
 	}
 
 	getPostID(){
-		let { user_id, post_id } = this.props.params;
+		let { user_id } = this.props.params;
 		ajax(`https://blooming-springs-29783.herokuapp.com/posts/${user_id}/newest`)
 
 		.then (post => {
@@ -22,6 +22,7 @@ export default class CurrentUserView extends Component {
 				post: post.postings,
 				loading: false
 				});
+				console.log(this.state)
 				console.log(post.postings)
 			}
 		)
@@ -32,7 +33,7 @@ componentWillMount(){
 	// .then(post => {
 	// 	this.setState({post})
 	this.getPostID()
-	let { user_id, post_id } = this.props.params;
+	let { user_id } = this.props.params;
 	ajax(`https://blooming-springs-29783.herokuapp.com/posts/${user_id}/newest`)
 
 	.then (post => {
@@ -47,7 +48,7 @@ componentWillMount(){
 }
 	render() {
 		let {post} = this.state
-		// let {user_id, post_id} = this.props.params;
+		let {user_id} = this.props.params;
 		// console.log(post.id)
 		// console.log(post)
 		let currentUser = cookie.getJSON("currentUser");
@@ -59,7 +60,7 @@ componentWillMount(){
 					<h1>{currentUser.username}</h1>
 					<h3>{post.title}</h3>
 					<div>{post.text}</div>
-					<ResponseFeed post_id={post_id}/>
+					{/*<ResponseFeed post_id={post_id}/>*/}
 				</div>
 			</div>
 			)

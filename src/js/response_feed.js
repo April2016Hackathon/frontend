@@ -1,5 +1,7 @@
 import React, {PropTypes, Component } from 'react';
 import { ajax } from 'jquery';
+import cookie from 'js-cookie';
+import SSF from 'react-simple-serial-form';
 
 export default class ResponseFeed extends Component {
 
@@ -41,6 +43,22 @@ export default class ResponseFeed extends Component {
     )
   }
 
+  dataHandler(comment){
+    let currentUser = cookie.getJSON('currentUser')
+    console.log(currentUser.auth_token)
+    let {post_id} = this.props.params;
+      ajax({
+        url: `https://blooming-springs-29783.herokuapp.com/posts/${post_id}/responses`,
+        type: 'POST',
+        data: comment,
+        cached: false,
+        dataType: 'json',
+        headers: {
+          'X-Auth-Token': currentUser.auth_token
+        }
+      })
+    }
+
   componentWillUnmount(){
     clearInterval(this.intervalID)
   }
@@ -53,6 +71,10 @@ export default class ResponseFeed extends Component {
         <ul>
           {responses.map(::this.makeResponse)}
         </ul>
+        <SSF onData={::this.dataHandler}>
+          <input type="text" name="responses" placeholder="Elevate my mood.."/>
+          <button>Submit</button>
+        </SSF>
       </div>
     );
   }

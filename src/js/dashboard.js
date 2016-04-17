@@ -25,12 +25,13 @@ export default class Dashboard extends Component {
 
 			<div className="dashboard">
 			<header>
-				HEADER
-				<span>{currentUser.username}</span>
 				<img
 					src='../images/mild_wild.png'
 					alt='Mild or Wild Logo'
+					width="75"
+					height="75"
 				/>
+				<span>{currentUser.username}</span>
 			</header>
 			<div className='main-wrapper'>
 				<aside>

@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import ResponseFeed from './response_feed';
 import { ajax } from 'jquery';
+import cookie from 'js-cookie';
 
 export default class CurrentUserView extends Component {
 	constructor(...args){
@@ -29,11 +30,13 @@ componentWillMount(){
 	render() {
 		let {post} = this.state
 		console.log(post)
+		let currentUser = cookie.getJSON("currentUser");
+		console.log(currentUser);
 		console.log(this.state)
 		return (
 			<div className="myprofile">
 				<div className="myprofile">
-					<h1>{post.user_id}</h1>
+					<h1>{currentUser.username}</h1>
 					<h3>{post.title}</h3>
 					<div>{post.text}</div>
 					<ResponseFeed post_id={post.id}/>

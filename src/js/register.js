@@ -32,13 +32,12 @@ export default class Register extends Component {
               <button>Register</button>
             </SSF>
           </div>
-          <div className='image'>
               <img
                 src='../images/mild_wild.png'
                 alt='Mild or Wild Logo'
                 width="150"
               /> 
-          </div>     
+ 
         </Paper>
       </div>
 

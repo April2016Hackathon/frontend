@@ -19,7 +19,7 @@ render ((
     	<Route path='/:username' component={Dashboard}>
 				<IndexRoute component={Submission}/>
 				<Route path='/:user_id/:post_id/mood' component={CurrentUserView}/>
-				<Route path='/:post_id' component={ResponseView}/>
+				<Route path='/posts/:post_id' component={ResponseView}/>
     	</Route>
 	</Router>
 

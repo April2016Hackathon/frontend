@@ -39,8 +39,9 @@ getLatestPosts(){
   }
 
   makePost(post){
+    console.log(post.user_id);
     return (
-      <Link to={`/posts/${post_id}`}><div className='post'>{post.user} {post.title}</div></Link>
+      <Link to={`/posts/${post.user_id}`}><div className='post'>{post.user} {post.title}</div></Link>
 
     )
   }
